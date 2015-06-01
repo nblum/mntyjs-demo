@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" data-mntyjs="'loggingEnabled':true, 'loadFrom':'plugins'" src="mnty.dev.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body {
+				padding: 30px;
+			}
+
+			.area {
+				position: relative;
+				border: 4px solid black;
+				height: 400px;
+				overflow: hidden;
+			}
+
+			.ball {
+				transition-timing-function: ease-out;
+				transition-duration: 0;
+			}
+		</style>
+  	</head>
+  	<body>
+  		<h1>mntyjs Moving Ball Demo</h1>
+  		<div class="row">
+            <div class="col-xs-6" data-mount="Manager" >
+                <div class="area"></div>
+                <div class="info">
+                    <label>Ball count:</label>
+                    <span class="count"></span>
+                </div>
+            </div>
+	  		<form class="col-xs-6 controls form-horizontal" data-mount="Control">
+	  			<fieldset>
+					<legend>Control</legend>
+
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="checkboxes">Activate Collision</label>
+					  	<div class="col-md-4">
+						  	<input type="checkbox" name="collision" value="1">
+                            (Experimental - tested in Firefox and IE 11 - does not work in Chrome)
+					  	</div>
+					</div>
+
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="textinput">Size</label>
+					  	<div class="col-md-4">
+					  		<input type="number" name="size" step="5" min="5" max="60" value="10" class="form-control input-md" />
+					  	</div>
+					</div>
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="textinput">Age</label>
+					  	<div class="col-md-4">
+					  		<input type="number" name="age" step="5" min="5" max="60" value="10" class="form-control input-md" />
+					  	</div>
+					</div>
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="textinput">Speed</label>
+					  	<div class="col-md-4">
+					  		<input type="number" name="speed" step="1" min="5" max="50" value="10" class="form-control input-md" />
+					  	</div>
+					</div>
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="textinput">Color</label>
+					  	<div class="col-md-4">
+					  		<select name="color" class="form-control">
+				  				<option value="red">red</option>
+				  				<option value="green">green</option>
+				  				<option value="blue">blue</option>
+				  				<option value="orange">orange</option>
+				  				<option value="silver">silver</option>
+				  				<option value="purple">purple</option>
+				  				<option value="fuchsia">fuchsia</option>
+				  				<option value="bisque">bisque</option>
+				  				<option value="brown">brown</option>
+					  		</select>
+					  	</div>
+					</div>
+					<div class="form-group">
+					  	<label class="col-md-4 control-label" for="singlebutton"></label>
+					  	<div class="col-md-4">
+							<button name="singlebutton" class="btn btn-primary">Add</button>
+					  	</div>
+					</div>
+	  			</fieldset>
+	  		</form>
+  		</div>
+
+  		<h2>Demonstrated Features</h2>
+  		<ul>
+  			<li>Using multiple clones of same plugin (every ball is using the same plugin)</li>
+  			<li>Inheritance: The BallCollide plugin extends the Ball plugin with the collision detection</li>
+  			<li>Create and Destroy process of plugins</li>
+  			<li>Configuration due the data-attribute</li>
+  			<li>Communication between Plugins about the system message bus</li>
+		</ul>
+  	</body>
+</html>
