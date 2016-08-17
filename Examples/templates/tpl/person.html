@@ -1,0 +1,13 @@
+<br/>
+<strong>{{=it.name}}</strong>
+<div>{{=it.street}}</div>
+
+{{? it.hobbies.length > 0 }}
+Hobbies:
+<ul>
+    {{~it.hobbies :value:index}}
+    <li>{{=value}}</li>
+    {{~}}
+</ul>
+{{?}}
+<br/>
